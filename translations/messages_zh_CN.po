@@ -2741,7 +2741,7 @@ msgstr ""
 
 #: lib/extensions/params.py:353
 msgid "Inkscape objects"
-msgstr ""
+msgstr "Inkscape对象"
 
 #: lib/extensions/params.py:412
 msgid "No options available"
