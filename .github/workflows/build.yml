@@ -164,10 +164,6 @@ jobs:
           Expand-Archive .\gettext-tools-windows-0.22.5.zip .;
           echo "$(pwd)\gettext-tools-windows-0.22.5\bin"
           echo "$(pwd)\gettext-tools-windows-0.22.5\bin" >> $GITHUB_PATH
-      - name: Check msgfmt
-        shell: cmd
-        run: |
-          msgfmt -h
 
       - name: install dependencies
         shell: bash
