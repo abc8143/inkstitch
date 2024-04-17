@@ -161,6 +161,8 @@ jobs:
       - name: install dependencies
         shell: bash
         run: |
+          git -version
+          git update
           git config --system core.longpaths true
           python -m pip install --upgrade pip
           python -m pip install wheel
@@ -169,11 +171,6 @@ jobs:
           python -m pip install pyinstaller==5.13.2
 
           echo "${{ env.pythonLocation }}\bin" >> $GITHUB_PATH
-
-          curl https://github.com/vslavik/gettext-tools-windows/releases/download/v0.22.5/gettext-tools-windows-0.22.5.zip
-          unzip .\gettext-tools-windows-0.22.5.zip
-          echo "$(pwd)\gettext-tools-windows-0.22.5\bin"
-          echo "$(pwd)\gettext-tools-windows-0.22.5\bin" >> $GITHUB_PATH
 
       - shell: bash
         run: |
