@@ -158,13 +158,7 @@ jobs:
           python-version: '3.8.x'
           architecture: 'x64'
       - uses: microsoft/setup-msbuild@v1.3.1
-      - name: Install msgfmt
-        run: |
-          (New-Object System.Net.WebClient).DownloadFile("https://github.com/vslavik/gettext-tools-windows/releases/download/v0.22.5/gettext-tools-windows-0.22.5.zip","gettext-tools-windows-0.22.5.zip");
-          Expand-Archive .\gettext-tools-windows-0.22.5.zip .;
-          echo "$(pwd)\gettext-tools-windows-0.22.5\bin"
-          echo "$(pwd)\gettext-tools-windows-0.22.5\bin" >> $GITHUB_PATH
-
+        -
       - name: install dependencies
         shell: bash
         run: |
@@ -176,6 +170,11 @@ jobs:
           python -m pip install pyinstaller==5.13.2
 
           echo "${{ env.pythonLocation }}\bin" >> $GITHUB_PATH
+
+          (New-Object System.Net.WebClient).DownloadFile("https://github.com/vslavik/gettext-tools-windows/releases/download/v0.22.5/gettext-tools-windows-0.22.5.zip","gettext-tools-windows-0.22.5.zip");
+          Expand-Archive .\gettext-tools-windows-0.22.5.zip .;
+          echo "$(pwd)\gettext-tools-windows-0.22.5\bin"
+          echo "$(pwd)\gettext-tools-windows-0.22.5\bin" >> $GITHUB_PATH
 
       - shell: bash
         run: |
