@@ -161,6 +161,9 @@ jobs:
       - name: install dependencies
         shell: bash
         run: |
+          
+          ls "C:\Program Files\Git\bin"
+          
           git config --system core.longpaths true
           python -m pip install --upgrade pip
           python -m pip install wheel
