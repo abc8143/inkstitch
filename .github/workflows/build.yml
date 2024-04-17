@@ -173,8 +173,8 @@ jobs:
         run: |
           (New-Object System.Net.WebClient).DownloadFile("https://github.com/vslavik/gettext-tools-windows/releases/download/v0.22.5/gettext-tools-windows-0.22.5.zip","gettext-tools-windows-0.22.5.zip");
           Expand-Archive .\gettext-tools-windows-0.22.5.zip .;
-          echo ./gettext-tools-windows-0.22.5"/bin
-          echo "./gettext-tools-windows-0.22.5"/bin" >> $GITHUB_PATH
+          echo .\gettext-tools-windows-0.22.5\bin
+          echo ".\gettext-tools-windows-0.22.5\bin" >> $GITHUB_PATH
       - name: Check msgfmt
         shell: bash
         run: |
