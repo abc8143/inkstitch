@@ -145,7 +145,7 @@ jobs:
 #          name: inkstitch-windows32
 #          path: artifacts
   windows64:
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
         with:
