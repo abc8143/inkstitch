@@ -176,7 +176,9 @@ jobs:
           echo ./gettext-tools-windows-0.22.5"/bin
           echo "./gettext-tools-windows-0.22.5"/bin" >> $GITHUB_PATH
       - name: Check msgfmt
-        run: msgfmt -help
+        shell: bash
+        run: |
+          msgfmt -help
       - shell: bash
         run: |
           make dist
