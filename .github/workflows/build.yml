@@ -145,7 +145,7 @@ jobs:
 #          name: inkstitch-windows32
 #          path: artifacts
   windows64:
-    runs-on: windows-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -173,7 +173,7 @@ jobs:
         run: |
           make dist
         env:
-          BUILD: linux
+          BUILD: windows
       # - uses: dlemstra/code-sign-action@v1
       #   with:
       #     certificate: '${{ secrets.INKSTITCH_CODE_SIGNING_CERTIFICATE }}'
