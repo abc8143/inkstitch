@@ -170,7 +170,7 @@ jobs:
 
           echo "${{ env.pythonLocation }}\bin" >> $GITHUB_PATH
 
-          wget https://github.com/vslavik/gettext-tools-windows/releases/download/v0.22.5/gettext-tools-windows-0.22.5.zip
+          curl https://github.com/vslavik/gettext-tools-windows/releases/download/v0.22.5/gettext-tools-windows-0.22.5.zip
           unzip .\gettext-tools-windows-0.22.5.zip
           echo "$(pwd)\gettext-tools-windows-0.22.5\bin"
           echo "$(pwd)\gettext-tools-windows-0.22.5\bin" >> $GITHUB_PATH
