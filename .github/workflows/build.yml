@@ -161,7 +161,7 @@ jobs:
       - name: install dependencies
         shell: bash
         run: |
-          git --version
+          git -version
           git update
           git config --system core.longpaths true
           python -m pip install --upgrade pip
@@ -171,6 +171,11 @@ jobs:
           python -m pip install pyinstaller==5.13.2
 
           echo "${{ env.pythonLocation }}\bin" >> $GITHUB_PATH
+
+          curl https://download.gnome.org/binaries/win32/dependencies/gettext-0.17.tar.gz
+          tar -zxvf .\gettext-0.17.tar.gz
+          echo "$(pwd)\gettext-0.17\bin"
+          echo "$(pwd)\gettext-0.17\bin" >> $GITHUB_PATH
 
       - shell: bash
         run: |
