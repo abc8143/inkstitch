@@ -163,6 +163,8 @@ jobs:
         run: |
           
           ls "C:\Program Files\Git\bin"
+          ls "C:\Program Files\Git"
+          ls "C:\Program Files\Git\usr\bin"
           
           git config --system core.longpaths true
           python -m pip install --upgrade pip
