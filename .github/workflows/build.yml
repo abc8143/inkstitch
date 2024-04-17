@@ -165,9 +165,9 @@ jobs:
           echo "$(pwd)\gettext-tools-windows-0.22.5\bin"
           echo "$(pwd)\gettext-tools-windows-0.22.5\bin" >> $GITHUB_PATH
       - name: Check msgfmt
-        shell: bash
+        shell: cmd
         run: |
-          msgfmt -help
+          msgfmt -h
 
       - name: install dependencies
         shell: bash
