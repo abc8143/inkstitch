@@ -158,14 +158,13 @@ jobs:
           python-version: '3.8.x'
           architecture: 'x64'
       - uses: microsoft/setup-msbuild@v1.3.1
+      - name: Setup Git for Windows' build-installers SDK
+      - uses: git-for-windows/setup-git-for-windows-sdk
+        with:
+          flavor: build-installers
       - name: install dependencies
         shell: bash
         run: |
-          
-          ls "C:\Program Files\Git\bin"
-          ls "C:\Program Files\Git"
-          ls "C:\Program Files\Git\usr\bin"
-          
           git config --system core.longpaths true
           python -m pip install --upgrade pip
           python -m pip install wheel
@@ -174,12 +173,6 @@ jobs:
           python -m pip install pyinstaller==5.13.2
 
           echo "${{ env.pythonLocation }}\bin" >> $GITHUB_PATH
-
-          curl https://download.gnome.org/binaries/win32/dependencies/gettext-0.17.tar.gz
-          tar -zxvf .\gettext-0.17.tar.gz
-          echo "$(pwd)\gettext-0.17\bin"
-          echo "$(pwd)\gettext-0.17\bin" >> $GITHUB_PATH
-
       - shell: bash
         run: |
           make dist
