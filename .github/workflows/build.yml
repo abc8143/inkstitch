@@ -158,10 +158,6 @@ jobs:
           python-version: '3.8.x'
           architecture: 'x64'
       - uses: microsoft/setup-msbuild@v1.3.1
-      - name: Setup Git for Windows' build-installers SDK
-      - uses: git-for-windows/setup-git-for-windows-sdk
-        with:
-          flavor: build-installers
       - name: install dependencies
         shell: bash
         run: |
@@ -173,6 +169,10 @@ jobs:
           python -m pip install pyinstaller==5.13.2
 
           echo "${{ env.pythonLocation }}\bin" >> $GITHUB_PATH
+      - name: Setup Git for Windows' build-installers SDK
+      - uses: git-for-windows/setup-git-for-windows-sdk
+        with:
+          flavor: build-installers
       - shell: bash
         run: |
           make dist
